@@ -26,10 +26,10 @@ function parsePlayers($: CheerioAPI, $table: Cheerio<Element>) {
   const homeN = $($nRow.find("td")[0]).text().trim();
   const awayN = $($nRow.find("td")[1]).text().trim();
 
-  const homeW = $($ewRow.find("td")[0]).text().trim();
-  const homeE = $($ewRow.find("td")[2]).text().trim();
-  const awayW = $($ewRow.find("td")[3]).text().trim();
-  const awayE = $($ewRow.find("td")[5]).text().trim();
+  const awayW = $($ewRow.find("td")[0]).text().trim();
+  const awayE = $($ewRow.find("td")[2]).text().trim();
+  const homeW = $($ewRow.find("td")[3]).text().trim();
+  const homeE = $($ewRow.find("td")[5]).text().trim();
 
   const homeS = $($sRow.find("td")[0]).text().trim();
   const awayS = $($sRow.find("td")[1]).text().trim();

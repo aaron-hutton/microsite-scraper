@@ -30,7 +30,7 @@ export async function runScrape({
 
     const matches: Match[] = [];
 
-    for (let matchNum = 0; matchNum < 1; matchNum++) {
+    for (let matchNum = 0; matchNum < round.length; matchNum++) {
       console.log("Parse match: " + matchNum);
       const matchPage = await fetchMatchPage(url, round[matchNum].link);
       const match = parseMatch(matchPage, round[matchNum].summary);
