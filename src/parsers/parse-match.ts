@@ -3,6 +3,26 @@ import type { Board, Match, MatchSummary } from "../types";
 
 export function parseMatch(page: string, summary: MatchSummary): Match {
   const $ = load(page);
+
+  if ($($("table td")).text().includes("There is no data for this round")) {
+    return {
+      ...summary,
+      homePlayers: {
+        N: "",
+        E: "",
+        S: "",
+        W: "",
+      },
+      awayPlayers: {
+        N: "",
+        E: "",
+        S: "",
+        W: "",
+      },
+      boards: [],
+    };
+  }
+
   const $playerTable = $($("table table table table")[1]);
   const $boardsTable = $($("table table table")[4]);
 
